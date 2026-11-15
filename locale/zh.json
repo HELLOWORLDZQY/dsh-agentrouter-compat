@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "AgentRouter Responses 兼容补丁",
+    "description": "修复 Responses 历史重放时因上游资源不同触发的 HTTP 400：清理出站 JSON 的资源绑定 item ID 与存储引用。在“插件”中安装并启用，与现有 AgentRouter 路由配合使用，无需另填密钥。必须发送完整内联历史；仅靠引用保存的历史无法恢复。不改模型路由、User-Agent、代理、工具 schema 或重试策略。默认仅处理 AgentRouter 的 HTTPS 主机与 /v1/responses。关闭后停止本插件的改写，但已有手工注入补丁不受影响。变更原路由插件的启停状态后请重启 DSH。"
+  }
+}

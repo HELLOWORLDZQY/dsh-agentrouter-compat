@@ -1,0 +1,56 @@
+{
+  "name": "dsh-agentrouter-compat",
+  "version": "1.0.0",
+  "description": "Standalone DSH plugin for AgentRouter Responses HTTP 400 cross-resource replay errors.",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./compat": "./lib/compat.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "lib/",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": ">=24.9.0",
+    "dsh": ">=0.2.2-rc.3 <0.3.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "check": "node --check index.js && node --check lib/compat.js && node --check lib/fetch.js && node --check lib/lifecycle.js",
+    "pack:check": "npm pack --dry-run --ignore-scripts",
+    "verify:installed": "node scripts/verify-installed-sdk.mjs"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "~3.19.0"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.1.0",
+    "js-yaml": "4.3.2"
+  },
+  "keywords": ["deepseek-harness", "dsh-plugin", "agentrouter", "openai-responses", "compatibility"],
+  "author": "HELLOWORLDZQY",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HELLOWORLDZQY/dsh-agentrouter-compat.git"
+  },
+  "homepage": "https://github.com/HELLOWORLDZQY/dsh-agentrouter-compat#readme",
+  "bugs": {
+    "url": "https://github.com/HELLOWORLDZQY/dsh-agentrouter-compat/issues"
+  }
+}

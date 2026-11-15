@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "AgentRouter Responses compatibility",
+    "description": "Fixes the Responses HTTP 400 ‘item was created under a different resource’ replay error by removing resource-bound item IDs and stored references from outbound JSON. Install and enable in Plugins alongside your existing AgentRouter route; no additional key is needed. Requires full inline conversation history: reference-only history cannot be recovered. Does not change routes, User-Agent, proxies, tool schemas or retries. Applies to the default AgentRouter HTTPS hosts and /v1/responses only. Disabling stops this plugin’s rewrites; old manually injected patches remain independent. Restart DSH after changing the original routing plugin’s activation state."
+  }
+}
